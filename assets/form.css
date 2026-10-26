@@ -1,0 +1,105 @@
+/* Анкеты кандидатов. Поведение и поля — как в прежних анкетах HR
+   (почта, видео, сетка часов, документы), оформление — общий стиль MimTeach. */
+.fhero{padding:40px 0 10px;text-align:center}
+.fhero h1{font-size:clamp(30px,5vw,52px)}
+.fhero p{margin:14px auto 0;max-width:680px;font-size:17px}
+.vac-title{display:inline-block;margin-top:18px;font-weight:900;font-size:15px;color:#fff;background:var(--magenta);
+  padding:8px 18px;border-radius:999px;border:3px solid #fff;transform:rotate(-2deg);box-shadow:var(--shadow)}
+
+form{padding:28px 0 80px}
+.card{background:#fff;border:4px solid var(--p-yellow);border-radius:var(--r-card);padding:28px 24px;
+  box-shadow:0 6px 18px rgba(119,37,131,.06);margin-bottom:22px}
+.card:nth-of-type(3n+2){border-color:var(--p-sky)}
+.card:nth-of-type(3n+3){border-color:var(--p-mint)}
+@media(max-width:560px){.card{padding:22px 16px}}
+.card h2{font-size:clamp(20px,3vw,26px);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.card h2 .ico{font-size:26px}
+.card .intro{margin:-6px 0 16px;font-size:15px;color:var(--muted)}
+
+.field{margin-bottom:18px}
+.field:last-child{margin-bottom:0}
+label,.lbl{display:block;font-weight:800;font-size:15px;margin-bottom:6px;color:var(--ink-strong)}
+.req{color:var(--error)}
+.opt{color:var(--muted);font-weight:600;font-size:13px}
+.hint{font-size:14px;color:var(--muted);margin-top:6px}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
+  width:100%;padding:15px 18px;border:1.5px solid var(--line);border-radius:var(--r-field);
+  font-family:'Nunito',sans-serif;font-size:17px;color:var(--ink-strong);background:#fff;
+  transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;appearance:none}
+textarea{resize:vertical;min-height:110px}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23772583' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:42px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,105,0,.14)}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+@media(max-width:600px){.row2{grid-template-columns:minmax(0,1fr)}}
+
+/* видео: вопросы */
+.tz{background:var(--p-yellow);border-radius:22px;padding:18px 20px;font-size:16px;margin-bottom:18px}
+.tz b{display:block;margin-bottom:8px}
+.tz ol{margin:8px 0 4px 22px;display:flex;flex-direction:column;gap:7px}
+
+/* видео: два равных способа */
+.vchoice{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:stretch}
+.vchoice .or{align-self:center;font-weight:900;color:var(--muted);text-transform:uppercase;font-size:13px}
+.vchoice .opt-box{border:1.5px solid var(--line);border-radius:var(--r-field);padding:14px;background:#FFFDF8}
+.vchoice .opt-box .t{font-weight:900;font-size:14px;color:var(--purple);margin-bottom:8px}
+@media(max-width:700px){.vchoice{grid-template-columns:minmax(0,1fr)}.vchoice .or{justify-self:center}}
+
+/* файлы */
+.filebox{display:block;border:2px dashed var(--line);border-radius:var(--r-field);padding:16px;text-align:center;
+  cursor:pointer;background:#fff;transition:border-color .15s;font-size:14px;margin-bottom:0}
+.filebox:hover{border-color:var(--orange)}
+.filebox.has{border-style:solid;border-color:var(--mint);background:var(--p-mint)}
+.filebox b{display:block;font-size:15px;font-weight:800;overflow-wrap:anywhere}
+.filebox span{color:var(--muted);font-size:13px;font-weight:600}
+.filebox input{display:none}
+.doc-why{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* прогресс загрузки видео */
+.progress{display:none;margin-top:12px}
+.progress .bar{height:10px;border-radius:999px;background:var(--p-yellow);overflow:hidden}
+.progress .fill{height:100%;width:0;background:linear-gradient(90deg,var(--yellow),var(--orange));transition:width .3s}
+.progress .lbl2{font-size:13px;color:var(--muted);margin-top:6px;text-align:center}
+
+/* сетка часов — клетка равна одному часу */
+.grid-wrap{overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.sgrid{border-collapse:separate;border-spacing:3px;margin:0 auto}
+.sgrid th{font-size:12px;font-weight:800;color:var(--muted);padding:2px;text-align:center}
+.sgrid th.hour{cursor:pointer;min-width:34px}
+.sgrid th.hour:hover{color:var(--orange)}
+/* столбец дней закреплён: на телефоне сетка листается вбок */
+.sgrid th.day{text-align:left;font-size:14px;color:var(--ink-strong);cursor:pointer;padding-right:8px;white-space:nowrap;
+  position:sticky;left:0;background:#fff;z-index:1}
+.sgrid th.day:hover{color:var(--orange)}
+.sgrid td{padding:0}
+.cell{height:32px;width:34px;border:2px solid var(--line);border-radius:9px;cursor:pointer;background:#FFFDF8;
+  transition:background .1s,border-color .1s;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+.cell.on{background:var(--mint);border-color:var(--mint)}
+@media(max-width:560px){.cell{height:38px}}
+.grid-sum{margin-top:12px;font-size:14px;font-weight:800;color:var(--ink-strong)}
+.grid-sum span{color:var(--muted);font-weight:700}
+.grid-load{margin-top:8px;font-size:14px;font-weight:700;border-radius:14px;padding:10px 14px;display:none}
+.grid-load.ok{display:block;background:var(--p-mint);color:#17694F}
+.grid-load.low{display:block;background:#FFE7D6;color:#9A3F00}
+.grid-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.grid-actions button{font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;color:var(--purple);background:var(--p-lilac);
+  border:none;border-radius:999px;padding:7px 14px;cursor:pointer}
+.grid-actions button:hover{background:#E6C9E7}
+
+/* согласие + отправка */
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--muted);font-weight:600}
+.consent input{width:22px;height:22px;margin-top:1px;accent-color:var(--orange);flex-shrink:0}
+.btn-submit{margin-top:22px}
+.btn-submit:disabled{opacity:.6;cursor:wait;transform:none}
+.err{display:none;background:var(--error-bg);color:var(--error);border-radius:16px;padding:14px 16px;font-size:15px;
+  font-weight:800;margin-top:14px}
+
+/* экран «заявка получена» */
+#success{display:none;text-align:center;padding:80px 20px 100px}
+#success .big{font-size:76px;margin-bottom:14px}
+#success h1{font-size:clamp(28px,5vw,48px);margin-bottom:14px}
+#success p{font-size:18px;max-width:540px;margin:0 auto 8px}
+#success .btn{margin-top:22px}
+
+/* ловушка для ботов: поле невидимо для людей */
+.hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}

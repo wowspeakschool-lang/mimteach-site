@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FFB81C">
+<title>MimTeach — работа в онлайн-школе «Маша и Медведь»</title>
+<meta name="description" content="Вакансии онлайн-школы подготовки к школе по бренду «Маша и Медведь»: педагог по подготовке к школе и менеджер вводного урока. Дети 4–7 лет, онлайн.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23772583'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='38' text-anchor='middle' fill='%23FFB81C'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Rubik:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* первый экран: две колонки, справа — жёлтое «пятно» с эмодзи (без картинок и персонажей) */
+.hero{padding:56px 0 76px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center}
+@media(max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.hero{padding:36px 0 56px}}
+.hero h1{margin:20px 0 18px}
+.hero .sub{font-size:clamp(19px,2.2vw,24px);font-weight:800;color:var(--purple);line-height:1.3}
+.hero .txt{margin-top:12px;font-size:18px;max-width:600px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-visual{position:relative;max-width:440px;width:100%;margin:0 auto;aspect-ratio:400/420}
+.blob{position:absolute;inset:0;background:var(--yellow);border:6px solid #fff;
+  border-radius:58% 42% 52% 48% / 46% 56% 44% 54%;box-shadow:0 18px 40px rgba(255,184,28,.35)}
+.blob-in{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;place-items:center;padding:16%;
+  font-size:clamp(46px,9vw,78px);line-height:1}
+.blob-in span:nth-child(odd){transform:rotate(-8deg)}
+.blob-in span:nth-child(even){transform:rotate(9deg)}
+.tilt{position:absolute;left:-4%;bottom:12%;background:var(--magenta);color:#fff;font-weight:900;font-size:17px;
+  padding:10px 20px;border-radius:999px;border:3px solid #fff;transform:rotate(-7deg);box-shadow:var(--shadow)}
+.tilt.t2{left:auto;right:-2%;bottom:auto;top:8%;background:var(--mint);transform:rotate(6deg)}
+@media(max-width:620px){.hero-visual{max-width:300px}.tilt{left:0}.tilt.t2{right:0}}
+.hero .facts-row{margin-top:30px}
+
+/* вакансии */
+.vac-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+@media(max-width:860px){.vac-grid{grid-template-columns:minmax(0,1fr)}}
+.vac{background:#fff;border:5px solid #fff;border-radius:var(--r-card);padding:30px 26px;box-shadow:0 16px 36px rgba(0,60,90,.18);
+  display:flex;flex-direction:column}
+.vac .open{display:inline-block;align-self:flex-start;font-size:13px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;
+  color:#fff;background:var(--mint);padding:5px 14px;border-radius:999px;transform:rotate(-2deg)}
+.vac h3{font-size:clamp(22px,2.6vw,30px);margin:14px 0 6px}
+.vac .pay{font-family:'Rubik',sans-serif;font-weight:900;font-size:22px;color:var(--orange)}
+.vac .meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.vac .meta span{font-size:14px;font-weight:800;background:var(--p-sky);padding:6px 12px;border-radius:999px}
+.vac p{font-size:16px;flex:1}
+.vac .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+@media(max-width:560px){.vac .acts .btn{width:100%}}
+
+/* финальный призыв */
+.final .box{max-width:780px;margin:0 auto;background:#fff;border:5px solid #fff;border-radius:var(--r-card);
+  padding:44px 30px;text-align:center;box-shadow:var(--shadow);transform:rotate(-.8deg)}
+.final .box p{margin:14px auto 26px;max-width:560px}
+.final .acts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+@media(max-width:560px){.final .acts .btn{width:100%}.final .box{padding:34px 20px}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><span class="mark">M</span>MimTeach</a>
+    <nav>
+      <a class="link" href="#why">Почему у нас</a>
+      <a class="link" href="#vacancies">Вакансии</a>
+      <a class="btn btn-orange btn-sm" href="#vacancies">Откликнуться</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ ПЕРВЫЙ ЭКРАН ============ -->
+<section class="hero">
+  <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Работа онлайн · дети 4–7 лет</span>
+      <h1><span class="plaque">MimTeach</span> — команда <span class="ring">онлайн-школы</span> «Маша и Медведь»</h1>
+      <p class="sub">Онлайн-школа подготовки к школе по бренду «Маша и Медведь» для детей 4–7 лет.</p>
+      <p class="txt">Индивидуальные занятия по 20 и 30 минут. Дошкольное направление только запускается — вы приходите на самом старте.</p>
+      <div class="hero-cta">
+        <a href="#vacancies" class="btn btn-orange">Смотреть вакансии</a>
+        <a href="#why" class="btn btn-ghost">Почему у нас</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="blob"></div>
+      <div class="blob-in"><span>🎒</span><span>✏️</span><span>🧩</span><span>⭐</span></div>
+      <div class="tilt">дети 4–7 лет</div>
+      <div class="tilt t2">онлайн</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ПОЧЕМУ У НАС (тексты — из описаний вакансий) ============ -->
+<section class="section bg-lilac" id="why">
+  <span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Почему у нас <span class="plaque mag">интересно</span> работать</h2>
+    </div>
+    <div class="stickers">
+      <div class="sticker"><div class="ico">💛</div><h3>Бренд, который знают и любят все дети</h3>
+        <p>Мы работаем с героями мультсериала «Маша и Медведь» — дети приходят на занятия с восторгом и предвкушением, а не со страхом перед «учёбой».</p></div>
+      <div class="sticker"><div class="ico">📚</div><h3>Готовые материалы и сценарии</h3>
+        <p>Никакой ночной подготовки! Наш методист уже разработал подробные сценарии и интерактивные презентации для каждого урока.</p></div>
+      <div class="sticker"><div class="ico">🤝</div><h3>Сильная методическая поддержка</h3>
+        <p>Качественный разбор записей уроков, регулярная обратная связь и помощь в профессиональном росте.</p></div>
+      <div class="sticker"><div class="ico">🚀</div><h3>Старт нового направления</h3>
+        <p>Дошкольное направление только запускается — вы приходите на самом старте и можете напрямую влиять на развитие продукта своими наблюдениями с уроков.</p></div>
+      <div class="sticker"><div class="ico">🏡</div><h3>Комфортный home-office</h3>
+        <p>Работайте из любой точки мира и отдыхайте между уроками в привычной и спокойной атмосфере.</p></div>
+      <div class="sticker"><div class="ico">📊</div><h3>Прозрачная мотивация</h3>
+        <p>Видно, за что и сколько.</p></div>
+    </div>
+    <div class="facts-row" style="justify-content:center;margin-top:48px">
+      <span class="fact">Дети 4–7 лет</span>
+      <span class="fact">Уроки в Zoom</span>
+      <span class="fact">Готовые сценарии</span>
+      <span class="fact">Удалённо</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ВАКАНСИИ ============ -->
+<section class="section bg-sky" id="vacancies">
+  <span class="spark s1"></span><span class="spark s4"></span>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Открытые <span class="plaque">вакансии</span></h2>
+    </div>
+    <div class="vac-grid">
+      <div class="vac">
+        <span class="open">● Открыта</span>
+        <h3>Педагог по подготовке к школе</h3>
+        <div class="pay">25 000 – 120 000 ₽</div>
+        <div class="meta"><span>Удалённо</span><span>Дети 4–7 лет</span><span>5/2, 2/2, по выходным</span><span>Уроки 20 и 30 минут</span></div>
+        <p>Ищем внимательного, увлеченного и энергичного педагога для онлайн-занятий с детьми 4–7 лет.</p>
+        <div class="acts">
+          <a href="vacancy-teacher.html" class="btn btn-orange btn-sm">Смотреть вакансию →</a>
+          <a href="apply-teacher.html" class="btn btn-ghost btn-sm">Заполнить анкету</a>
+        </div>
+      </div>
+      <div class="vac">
+        <span class="open">● Открыта</span>
+        <h3>Менеджер вводного урока (МВУ)</h3>
+        <div class="pay">20 000 – 60 000 ₽</div>
+        <div class="meta"><span>Удалённо</span><span>Вводные уроки 40 минут</span><span>От 20 уроков в неделю</span></div>
+        <p>МВУ — первая живая встреча семьи со школой: 40 минут игры и заданий, после которых родитель понимает уровень ребёнка и получает честную рекомендацию.</p>
+        <div class="acts">
+          <a href="vacancy-manager.html" class="btn btn-orange btn-sm">Смотреть вакансию →</a>
+          <a href="apply-manager.html" class="btn btn-ghost btn-sm">Заполнить анкету</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ФИНАЛЬНЫЙ ПРИЗЫВ ============ -->
+<section class="section bg-yellow final">
+  <div class="wrap">
+    <div class="box">
+      <h2>Хочу в <span class="plaque">команду!</span></h2>
+      <p>Выберите вакансию и заполните анкету с видео-визиткой — мы посмотрим её и свяжемся с вами.</p>
+      <div class="acts">
+        <a href="apply-teacher.html" class="btn btn-orange">Анкета педагога</a>
+        <a href="apply-manager.html" class="btn btn-ghost">Анкета МВУ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="row">
+      <span>© 2026 MimTeach · онлайн-школа подготовки к школе по бренду «Маша и Медведь»</span>
+      <a href="soglasie.html">Согласие на обработку персональных данных</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
